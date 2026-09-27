@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crime News & Reports | SHE KNOWS</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff5fa;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #8e2de2, #ff4b91);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: white;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #7a236d;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: #ff3f87;
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 40px auto 20px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            color: #8e2de2;
+            margin-bottom: 12px;
+            font-size: 30px;
+        }
+
+        .intro p {
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .notice {
+            max-width: 900px;
+            margin: 25px auto 45px;
+            padding: 18px 22px;
+            background: white;
+            border-left: 5px solid #ff4b91;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+            line-height: 1.6;
+        }
+
+        .notice strong {
+            color: #8e2de2;
+        }
+
+        .country {
+            max-width: 1150px;
+            margin: 55px auto;
+            padding: 0 20px;
+        }
+
+        .country-title {
+            font-size: 31px;
+            color: #7a236d;
+            border-bottom: 3px solid #ff7aad;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 7px 22px rgba(0,0,0,0.09);
+            border-top: 5px solid #ff4b91;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f3d9ff;
+            color: #7a236d;
+            padding: 6px 11px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 13px;
+        }
+
+        .card h3 {
+            color: #8e2de2;
+            font-size: 21px;
+            line-height: 1.4;
+            margin-bottom: 13px;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.65;
+            margin-bottom: 15px;
+        }
+
+        .details {
+            background: #fff4f8;
+            padding: 14px;
+            border-radius: 10px;
+            margin: 15px 0;
+            line-height: 1.65;
+            font-size: 14px;
+        }
+
+        .status {
+            font-weight: bold;
+            color: #d12c70;
+        }
+
+        .source {
+            font-size: 13px;
+            color: #777;
+            margin-top: 12px;
+        }
+
+        .source a {
+            color: #7a236d;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .source a:hover {
+            text-decoration: underline;
+        }
+
+        .update {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 6px 10px;
+            background: #ffe4f0;
+            color: #9b275f;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 70px;
+            background: #35132f;
+            color: white;
+            text-align: center;
+            padding: 32px 20px;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px;
+            }
+
+            .country-title {
+                font-size: 25px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>📰 Crime News & Reports</h1>
+
+    <p>
+        SHE KNOWS reports important developments involving crimes
+        affecting women and girls around the world.
+    </p>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">🏠 Home</a>
+
+</nav>
+
+
+<section class="intro">
+
+    <h2>Real Cases. Verified Information.</h2>
+
+    <p>
+        Explore reported cases, investigations, public attention,
+        police action and court decisions. Legal status is clearly
+        identified so that allegations are not presented as convictions.
+    </p>
+
+</section>
+
+
+<div class="notice">
+
+    <strong>⚠️ Important:</strong>
+
+    A reported allegation, arrest or charge does not automatically mean
+    that someone has been found guilty. Court decisions are identified
+    separately. Victims, especially children, are described respectfully
+    and without unnecessary graphic details.
+
+</div>
+
+
+
+<!-- ================= INDIA ================= -->
+
+<section class="country">
+
+    <h2 class="country-title">
+        🇮🇳 India — Featured Crime Reports
+    </h2>
+
+    <div class="articles">
+
+
+        <!-- R G KAR -->
+
+        <article class="card">
+
+            <span class="tag">
+                Sexual Violence • Murder • Conviction
+            </span>
+
+            <h3>
+                Kolkata R.G. Kar Medical College case
+            </h3>
+
+            <p>
+                A junior doctor was raped and murdered at R.G. Kar Medical
+                College and Hospital in Kolkata in August 2024. The case
+                sparked major protests by doctors and widespread national
+                attention over women's safety and hospital security.
+            </p>
+
+            <div class="details">
+
+                <strong>📍 Location:</strong>
+                Kolkata, West Bengal, India
+                <br>
+
+                <strong>📅 Incident:</strong>
+                August 2024
+                <br><br>
+
+                <strong>👮 Investigation:</strong>
+                India's federal investigative agency investigated the case.
+                The prosecution relied on circumstantial evidence and
+                examined 51 of 128 listed witnesses during the trial.
+
+                <br><br>
+
+                <strong>📢 Public attention:</strong>
+                Junior doctors held demonstrations and work stoppages
+                demanding justice and better security in hospitals.
+
+                <br><br>
+
+                <strong>⚖️ Court decision:</strong>
+                Sanjay Roy was convicted in January 2025 and sentenced
+                to life imprisonment.
+
+                <br><br>
+
+                <span class="status">
+                    Legal status: Conviction and life sentence reported.
+                    The defence said it intended to appeal.
+                </span>
+
+            </div>
+
+            <span class="update">
+                Court decision reported: January 2025
+            </span>
+
+            <p class="source">
+
+                Source:
+
+                <a
+                href="https://www.reuters.com/world/india/indian-police-volunteer-gets-life-sentence-rape-murder-kolkata-junior-doctor-2025-01-20/"
+                target="_blank">
+
+                    Reuters
+
+                </a>
+
+            </p>
+
+        </article>
+
+
+
+        <!-- BARUIPUR -->
+
+        <article class="card">
+
+            <span class="tag">
+                Child • Sexual Violence • Investigation
+            </span>
+
+            <h3>
+                Baruipur case involving an 11-year-old girl
+            </h3>
+
+            <p>
+                The death of an 11-year-old girl in Baruipur, West Bengal,
+                received national attention and renewed discussion about
+                child safety, police response and sexual violence.
+            </p>
+
+            <div class="details">
+
+                <strong>📍 Location:</strong>
+                Baruipur, West Bengal, India
+                <br>
+
+                <strong>📅 Reported:</strong>
+                July 2026
+                <br><br>
+
+                <strong>👮 Police investigation:</strong>
+                Police arrested several suspects. One suspect was killed
+                after police said he attempted to seize a weapon during
+                the investigation.
+
+                <br><br>
+
+                <strong>📢 Public attention:</strong>
+                The case generated national discussion about police response,
+                women's and children's safety and due process.
+
+                <br><br>
+
+                <span class="status">
+                    ⚖️ Legal status:
+                    Investigation and proceedings were ongoing in the
+                    Reuters report. This is not presented as a final
+                    conviction.
+                </span>
+
+            </div>
+
+            <p class="source">
+
+                Source:
+
+                <a
+                href="https://www.reuters.com/world/asia-pacific/brutal-killing-11-year-old-highlights-unrelenting-sexual-violence-india-2026-07-15/"
+                target="_blank">
+
+                    Reuters
+
+                </a>
+
+            </p>
+
+        </article>
+
+
+
+        <!-- DELHI 17 YEAR OLD -->
+
+        <article class="card">
+
+            <span class="tag">
+                Sexual Violence • Minor • Investigation
+            </span>
+
+            <h3>
+                Delhi teenager's reported assault leads to protests
+            </h3>
+
+            <p>
+                A 17-year-old girl in New Delhi reported that she had been
+                sexually assaulted by three men who allegedly posed as
+                police officers. The report led to protests and renewed
+                public discussion about women's safety.
+            </p>
+
+            <div class="details">
+
+                <strong>📍 Location:</strong>
+                New Delhi, India
+                <br>
+
+                <strong>📅 Reported:</strong>
+                September 2026
+                <br><br>
+
+                <strong>👮 Police response:</strong>
+                Reuters reported that one suspect was apprehended and
+                two others were being questioned.
+
+                <br><br>
+
+                <strong>📢 Public attention:</strong>
+                Hundreds of students participated in a solidarity march
+                demanding greater safety for women.
+
+                <br><br>
+
+                <span class="status">
+                    ⚖️ Legal status:
+                    Investigation reported. No final conviction was
+                    reported in the source used here.
+                </span>
+
+            </div>
+
+            <p class="source">
+
+                Source:
+
+                <a
+                href="https://www.reuters.com/world/india/hundreds-protest-indias-capital-after-teenager-reports-gang-rape-2026-09-23/"
+                target="_blank">
+
+                    Reuters
+
+                </a>
+
+            </p>
+
+        </article>
+
+
+
+        <!-- WRESTLERS CASE -->
+
+        <article class="card">
+
+            <span class="tag">
+                Sexual Harassment • Court • Acquittal
+            </span>
+
+            <h3>
+                Former wrestling federation chief acquitted in harassment case
+            </h3>
+
+            <p>
+                Female wrestlers accused former wrestling federation chief
+                Brij Bhushan Sharan Singh of sexual harassment. The allegations
+                led to large protests by prominent Indian wrestlers and
+                attracted national attention.
+            </p>
+
+            <div class="details">
+
+                <strong>📍 Location:</strong>
+                India
+                <br>
+
+                <strong>📅 Allegations:</strong>
+                2023
+                <br><br>
+
+                <strong>📢 Public attention:</strong>
+                Olympic medalists and other wrestlers staged protests in
+                New Delhi demanding action.
+
+                <br><br>
+
+                <strong>⚖️ Court decision:</strong>
+                A Delhi court acquitted Singh in August 2026.
+
+                <br><br>
+
+                <strong>📣 After the decision:</strong>
+                The wrestlers and their lawyers said they intended to appeal.
+
+                <br><br>
+
+                <span class="status">
+                    Legal status: Acquittal reported; appeal process may
+                    continue.
+                </span>
+
+            </div>
+
+            <span class="update">
+                Court decision reported: August 2026
+            </span>
+
+            <p class="source">
+
+                Source:
+
+                <a
+                href="https://www.reuters.com/world/india/indian-court-acquits-wrestling-body-ex-chief-sexual-harassment-case-2026-08-03/"
+                target="_blank">
+
+                    Reuters
+
+                </a>
+
+            </p>
+
+        </article>
+
+
+
+        <!-- RAJASTHAN -->
+
+        <article class="card">
+
+            <span class="tag">
+                Child • Abduction • Sexual Violence • Investigation
+            </span>
+
+            <h3>
+                Rajasthan case involving a 12-year-old girl
+            </h3>
+
+            <p>
+                Reuters reported that a 12-year-old girl in Rajasthan was
+                abducted and sexually assaulted before being rescued.
+                The case drew attention to child protection and policing.
+            </p>
+
+            <div class="details">
+
+                <strong>📍 Location:</strong>
+                Rajasthan, India
+                <br>
+
+                <strong>📅 Reported:</strong>
+                July 2026
+                <br><br>
+
+                <strong>👮 Police response:</strong>
+                Police reported that the child was rescued and that
+                22 people had been arrested at the time of the report.
+
+                <br><br>
+
+                <strong>📢 Public attention:</strong>
+                The case became part of wider national discussion about
+                crimes against children.
+
+                <br><br>
+
+                <span class="status">
+                    ⚖️ Legal status:
+                    Arrests and investigation were reported. A final
+                    court verdict should not be inferred from the arrests.
+                </span>
+
+            </div>
+
+            <p class="source">
+
+                Source:
+
+                <a
+                href="https://www.reuters.com/world/asia-pacific/brutal-killing-11-year-old-highlights-unrelenting-sexual-violence-india-2026-07-15/"
+                target="_blank">
+
+                    Reuters
+
+                </a>
+
+            </p>
+
+        </article>
+
+
+
+        <!-- INDIA CONTEXT -->
+
+        <article class="card">
+
+            <span class="tag">
+                India • Crime & Justice
+            </span>
+
+            <h3>
+                Why these cases receive national attention
+            </h3>
+
+            <p>
+                High-profile cases in India have repeatedly led to protests,
+                public debate, demands for stronger investigations and
+                discussions about how the justice system handles crimes
+                affecting women and girls.
+            </p>
+
+            <div class="details">
+
+                <strong>📢 Public response:</strong>
+                Protests, student demonstrations, doctors' actions and
+                campaigns by women's rights groups have drawn attention
+                to individual cases.
+
+                <br><br>
+
+                <strong>⚖️ Justice system:</strong>
+                Cases can remain under investigation for years, while
+                others reach trial and appeal.
+
+                <br><br>
+
+                <span class="status">
+                    This is a general background article, not a court
+                    verdict or an individual criminal allegation.
+                </span>
+
+            </div>
+
+            <p class="source">
+
+                Source:
+
+                <a
+                href="https://www.reuters.com/world/india/"
+                target="_blank">
+
+                    Reuters — India
+
+                </a>
+
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= NEPAL ================= -->
+
+<section class="country">
+
+    <h2 class="country-title">
+        🇳🇵 Nepal — Crime Reports
+    </h2>
+
+    <div class="articles">
+
+
+        <article class="card">
+
+            <span class="tag">
+                Child • Sexual Violence • Court
+            </span>
+
+            <h3>
+                Garima Chaudhary case reaches Bara District Court
+            </h3>
+
+            <p>
+                The case involving the death of 12-year-old Garima Chaudhary
+                in Simara, Bara, generated widespread public outrage and
+                demands for justice. The case later reached the Bara
+                District Court.
+            </p>
+
+            <div class="details">
+
+                <strong>📍 Location:</strong>
+                Simara, Bara, Nepal
+                <br>
+
+                <strong>📅 Court order:</strong>
+                September 2026
+                <br><br>
+
+                <strong>👮 Investigation:</strong>
+                Police investigated the case and filed charges against
+                multiple accused people.
+
+                <br><br>
+
+                <strong>📢 Public attention:</strong>
+                The case led to widespread public outrage and discussions
+                about justice and protection of children.
+
+                <br><br>
+
+                <strong>⚖️ Court action:</strong>
+                The Bara District Court ordered two juveniles to a child
+                correction home pending trial.
+
+                <br><br>
+
+                <strong>💰 Compensation:</strong>
+                The court ordered Rs. 200,000 in interim compensation for
+                the victim's family.
+
+                <br><br>
+
+                <span class="status">
+                    Legal status: Proceedings were ordered to continue;
+                    this was not a final conviction.
+                </span>
+
+            </div>
+
+            <p class="source">
+
+                Sources:
+
+                <a
+                href="https://english.onlinekhabar.com/juveniles-bal-sudhar-garima-chaudhary.html"
+                target="_blank">
+
+                    Onlinekhabar
+
+                </a>
+
+                |
+                
+                <a
+                href="https://thehimalayantimes.com/ampArticle/1039981"
+                target="_blank">
+
+                    The Himalayan Times
+
+                </a>
+
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= USA ================= -->
+
+<section class="country">
+
+    <h2 class="country-title">
+        🇺🇸 United States — Crime Reports
+    </h2>
+
+    <div class="articles">
+
+
+        <article class="card">
+
+            <span class="tag">
+                Sexual Assault • Court
+            </span>
+
+            <h3>
+                Harvey Weinstein — New York criminal case
+            </h3>
+
+            <p>
+                The Harvey Weinstein case became one of the most closely
+                followed sexual-assault prosecutions in the United States
+                and generated extensive discussion about accountability
+                and sexual misconduct.
+            </p>
+
+            <div class="details">
+
+                <strong>📍 Location:</strong>
+                New York, USA
+                <br><br>
+
+                <strong>⚖️ Court history:</strong>
+                Weinstein's original New York conviction was overturned
+                in 2024. Later proceedings produced another conviction
+                in the New York case.
+
+                <br><br>
+
+                <strong>📢 Public attention:</strong>
+                The case received international media coverage and became
+                closely connected with broader discussions about sexual
+                misconduct and accountability.
+
+                <br><br>
+
+                <span class="status">
+                    Legal status:
+                    The case has involved multiple trials and appeals;
+                    always check the latest court record before treating
+                    any earlier decision as final.
+                </span>
+
+            </div>
+
+            <p class="source">
+
+                Source:
+
+                <a
+                href="https://www.reuters.com/"
+                target="_blank">
+
+                    Reuters
+
+                </a>
+
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= OTHER COUNTRIES ================= -->
+
+<section class="country">
+
+    <h2 class="country-title">
+        🌍 Other Countries
+    </h2>
+
+    <div class="articles">
+
+
+        <article class="card">
+
+            <span class="tag">
+                International • Women & Girls
+            </span>
+
+            <h3>
+                More verified international reports will be added
+            </h3>
+
+            <p>
+                SHE KNOWS will continue adding verified cases from other
+                countries. Each report will include the source, date,
+                investigation, public response and court status whenever
+                reliable information is available.
+            </p>
+
+            <div class="details">
+
+                <strong>🔎 Our rule:</strong>
+
+                We will not add a case simply because it is shocking or
+                widely shared online. Information must be checked against
+                reliable reporting or official records before it is
+                published.
+
+                <br><br>
+
+                <span class="status">
+                    Accuracy comes before sensationalism.
+                </span>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    <p>
+        <strong>SHE KNOWS</strong>
+    </p>
+
+    <p>
+        Know the facts. Understand the issues. Stay informed.
+    </p>
+
+    <p>
+        © 2026 SHE KNOWS
+    </p>
+
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crime & Statistics | SHE KNOWS</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff6fa;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #8e2457, #c94b82);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 19px;
+            margin-top: 12px;
+        }
+
+        nav {
+            background: #5d1739;
+            padding: 16px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 55px auto;
+            padding: 0 22px;
+        }
+
+        h2 {
+            color: #8e2457;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .intro {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .notice {
+            background: #f8dce9;
+            border-left: 6px solid #b52f70;
+            padding: 18px;
+            border-radius: 10px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* CRIME CARDS */
+
+        .crime-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 22px;
+        }
+
+        .crime-card {
+            background: white;
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .crime-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .crime-icon {
+            font-size: 42px;
+        }
+
+        .crime-card h3 {
+            color: #8e2457;
+            font-size: 22px;
+        }
+
+        .number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #b52f70;
+            margin: 15px 0;
+        }
+
+        .crime-card p {
+            line-height: 1.6;
+        }
+
+        .source {
+            font-size: 12px;
+            color: #777;
+            margin-top: 18px;
+            line-height: 1.5;
+        }
+
+        /* HOMICIDE */
+
+        .highlight {
+            background: linear-gradient(135deg, #8e2457, #b52f70);
+            color: white;
+            padding: 35px;
+            border-radius: 20px;
+            margin-top: 25px;
+        }
+
+        .highlight h3 {
+            font-size: 28px;
+            margin-top: 0;
+        }
+
+        .highlight-number {
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        /* AGE */
+
+        .age-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .age-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+        }
+
+        .age-card h3 {
+            color: #8e2457;
+        }
+
+        .age-number {
+            font-size: 30px;
+            font-weight: bold;
+            color: #b52f70;
+        }
+
+        /* PERPETRATORS */
+
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .person-card {
+            background: white;
+            padding: 27px;
+            border-radius: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .person-card h3 {
+            color: #8e2457;
+        }
+
+        /* PLACES */
+
+        .place-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .place-card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .place-card h3 {
+            color: #8e2457;
+        }
+
+        .place-number {
+            font-size: 30px;
+            font-weight: bold;
+            color: #b52f70;
+        }
+
+        /* REGIONS */
+
+        .region {
+            background: white;
+            padding: 23px;
+            border-radius: 14px;
+            margin: 15px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+        }
+
+        .region strong {
+            color: #8e2457;
+            font-size: 19px;
+        }
+
+        /* SOURCE */
+
+        .sources {
+            background: #f4dce7;
+            padding: 30px;
+            border-radius: 18px;
+            line-height: 1.8;
+        }
+
+        .sources a {
+            color: #8e2457;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #5d1739;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 36px;
+            }
+
+            nav a {
+                display: block;
+                margin: 9px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>Crime & Statistics</h1>
+
+    <p>
+        Real statistics about crimes and harmful practices affecting
+        women and girls around the world.
+    </p>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">🏠Home</a>>
+
+</nav>
+
+
+<!-- INTRO -->
+
+<section>
+
+    <h2>🌍 Understanding Crime Against Women & Girls</h2>
+
+    <p class="intro">
+
+        Crimes affecting women and girls take many different forms.
+        They can happen in homes, schools, workplaces, public spaces
+        and online.
+
+        This page brings together statistics from organizations such as
+        WHO, UN Women, UNICEF, UNODC and the ILO.
+
+    </p>
+
+    <div class="notice">
+
+        <strong>Important:</strong>
+
+        The percentages on this page do not represent one single
+        worldwide "percentage of all crime."
+
+        Each statistic measures a specific crime, harmful practice,
+        population or study. The source and population are shown
+        with each statistic.
+
+    </div>
+
+</section>
+
+
+<!-- CRIME TYPES -->
+
+<section>
+
+    <h2>🚨 Major Crimes & Harmful Practices</h2>
+
+    <div class="crime-grid">
+
+
+        <!-- SEXUAL VIOLENCE -->
+
+        <div class="crime-card">
+
+            <div class="crime-icon">⚠️</div>
+
+            <h3>Sexual Violence</h3>
+
+            <div class="number">8.4%</div>
+
+            <p>
+
+                Women aged 15–49 worldwide who experienced
+                non-partner sexual violence at least once
+                since age 15.
+
+            </p>
+
+            <div class="source">
+
+                WHO / UNODC — 2023 global estimate
+
+            </div>
+
+        </div>
+
+
+        <!-- INTIMATE PARTNER -->
+
+        <div class="crime-card">
+
+            <div class="crime-icon">🏠</div>
+
+            <h3>Intimate-Partner Violence</h3>
+
+            <div class="number">25.8%</div>
+
+            <p>
+
+                Ever-partnered women aged 15–49 who experienced
+                physical and/or sexual violence from a current or
+                former male intimate partner.
+
+            </p>
+
+            <div class="source">
+
+                WHO — 2023 global estimate
+
+            </div>
+
+        </div>
+
+
+        <!-- HOMICIDE -->
+
+        <div class="crime-card">
+
+            <div class="crime-icon">🕊️</div>
+
+            <h3>Female Homicide</h3>
+
+            <div class="number">85,000</div>
+
+            <p>
+
+                Women and girls were intentionally killed worldwide
+                in 2023.
+
+            </p>
+
+            <div class="source">
+
+                UNODC / UN Women — 2023
+
+            </div>
+
+        </div>
+
+
+        <!-- FEMICIDE -->
+
+        <div class="crime-card">
+
+            <div class="crime-icon">🕯️</div>
+
+            <h3>Partner / Family Killings</h3>
+
+            <div class="number">60%</div>
+
+            <p>
+
+                Around 60% of women and girls intentionally killed
+                in 2023 were killed by intimate partners or other
+                family members.
+
+            </p>
+
+            <div class="source">
+
+                UNODC / UN Women — 2023
+
+            </div>
+
+        </div>
+
+
+        <!-- TRAFFICKING -->
+
+        <div class="crime-card">
+
+            <div class="crime-icon">🔗</div>
+
+            <h3>Human Trafficking</h3>
+
+            <div class="number">61%</div>
+
+            <p>
+
+                Women and girls represented 61% of detected
+                trafficking victims in 2022.
+
+            </p>
+
+            <div class="source">
+
+                UNODC — Global Report on Trafficking in Persons 2024
+
+            </div>
+
+        </div>
+
+
+        <!-- CHILD MARRIAGE -->
+
+        <div class="crime-card">
+
+            <div class="crime-icon">👧</div>
+
+            <h3>Child Marriage</h3>
+
+            <div class="number">19%</div>
+
+            <p>
+
+                About 19% of young women aged 20–24 worldwide
+                were married or entered a union before age 18.
+
+            </p>
+
+            <div class="source">
+
+                UNICEF — global estimate
+
+            </div>
+
+        </div>
+
+
+        <!-- FGM -->
+
+        <div class="crime-card">
+
+            <div class="crime-icon">🛑</div>
+
+            <h3>Female Genital Mutilation</h3>
+
+            <div class="number">230M+</div>
+
+            <p>
+
+                More than 230 million girls and women alive today
+                have undergone female genital mutilation in the
+                countries where population data exist.
+
+            </p>
+
+            <div class="source">
+
+                WHO / UNICEF — 2024–2026 estimates
+
+            </div>
+
+        </div>
+
+
+        <!-- WORKPLACE -->
+
+        <div class="crime-card">
+
+            <div class="crime-icon">🏢</div>
+
+            <h3>Workplace Sexual Violence & Harassment</h3>
+
+            <div class="number">8.2%</div>
+
+            <p>
+
+                Women in employment who reported experiencing
+                sexual violence and harassment at work during
+                their working lives.
+
+            </p>
+
+            <div class="source">
+
+                ILO — Global Survey, 2022
+
+            </div>
+
+        </div>
+
+
+        <!-- ONLINE -->
+
+        <div class="crime-card">
+
+            <div class="crime-icon">📱</div>
+
+            <h3>Online Violence</h3>
+
+            <div class="number">16–58%</div>
+
+            <p>
+
+                Studies estimate that between 16% and 58% of women
+                worldwide have experienced some form of
+                technology-facilitated gender-based violence.
+
+            </p>
+
+            <div class="source">
+
+                UN Women — 2025 summary of available studies
+
+            </div>
+
+        </div>
+
+
+        <!-- PUBLIC HARASSMENT -->
+
+        <div class="crime-card">
+
+            <div class="crime-icon">🚶‍♀️</div>
+
+            <h3>Public-Space Sexual Harassment</h3>
+
+            <div class="number">50–100%</div>
+
+            <p>
+
+                Studies from different settings have found that
+                50–100% of women experienced sexual harassment or
+                other forms of sexual violence in public spaces.
+
+            </p>
+
+            <div class="source">
+
+                UN Women — studies across different settings
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- BIG HOMICIDE STAT -->
+
+<section>
+
+    <div class="highlight">
+
+        <h3>🕯️ Women & Girls Killed in 2023</h3>
+
+        <div class="highlight-number">
+            85,000
+        </div>
+
+        <p>
+
+            Approximately 85,000 women and girls were intentionally
+            killed worldwide in 2023.
+
+        </p>
+
+        <p>
+
+            Around 51,000 — about 60% — were killed by an intimate
+            partner or other family member.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- AGE -->
+
+<section>
+
+    <h2>👧 Crimes & Harm Across Ages</h2>
+
+    <div class="age-grid">
+
+
+        <div class="age-card">
+
+            <h3>👶 Girls in Childhood</h3>
+
+            <div class="age-number">230M+</div>
+
+            <p>
+
+                Girls and women alive today who have undergone
+                female genital mutilation.
+
+            </p>
+
+            <div class="source">
+
+                WHO / UNICEF
+
+            </div>
+
+        </div>
+
+
+        <div class="age-card">
+
+            <h3>👧 Girls Under 18</h3>
+
+            <div class="age-number">19%</div>
+
+            <p>
+
+                Global prevalence among young women aged 20–24
+                who were married before age 18.
+
+            </p>
+
+            <div class="source">
+
+                UNICEF
+
+            </div>
+
+        </div>
+
+
+        <div class="age-card">
+
+            <h3>👩 Ages 15–49</h3>
+
+            <div class="age-number">8.4%</div>
+
+            <p>
+
+                Experienced non-partner sexual violence since
+                age 15.
+
+            </p>
+
+            <div class="source">
+
+                WHO / UNODC — 2023
+
+            </div>
+
+        </div>
+
+
+        <div class="age-card">
+
+            <h3>👩 Women 15–49</h3>
+
+            <div class="age-number">25.8%</div>
+
+            <p>
+
+                Ever-partnered women experiencing physical and/or
+                sexual intimate-partner violence.
+
+            </p>
+
+            <div class="source">
+
+                WHO — 2023
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- WHO COMMITS CRIMES -->
+
+<section>
+
+    <h2>👤 Who Commits These Crimes?</h2>
+
+    <div class="people-grid">
+
+
+        <div class="person-card">
+
+            <h3>❤️ Current or Former Partner</h3>
+
+            <p>
+
+                WHO estimates that 25.8% of ever-partnered women
+                aged 15–49 have experienced physical and/or sexual
+                violence from a current or former male intimate
+                partner.
+
+            </p>
+
+        </div>
+
+
+        <div class="person-card">
+
+            <h3>👨‍👩‍👧 Family Members</h3>
+
+            <p>
+
+                In 2023, around 60% of women and girls who were
+                intentionally killed were killed by an intimate
+                partner or another family member.
+
+            </p>
+
+        </div>
+
+
+        <div class="person-card">
+
+            <h3>👤 Non-Partners</h3>
+
+            <p>
+
+                WHO/UNODC estimate that 8.4% of women aged 15–49
+                experienced non-partner sexual violence since age 15.
+
+            </p>
+
+        </div>
+
+
+        <div class="person-card">
+
+            <h3>🔗 Traffickers</h3>
+
+            <p>
+
+                Women and girls represented 61% of detected victims
+                of human trafficking in 2022.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- WHERE -->
+
+<section>
+
+    <h2>📍 Where Can These Crimes Happen?</h2>
+
+    <p class="intro">
+
+        Crime against women and girls can occur in many different
+        environments. The available international statistics do not
+        provide one percentage for every location, so each figure
+        below is labelled by its study.
+
+    </p>
+
+
+    <div class="place-grid">
+
+
+        <div class="place-card">
+
+            <h3>🏠 Home / Private Spaces</h3>
+
+            <p>
+
+                Intimate-partner violence is one of the most widely
+                measured forms of violence against women.
+
+            </p>
+
+            <div class="place-number">
+                25.8%
+            </div>
+
+            <p>
+
+                Ever-partnered women aged 15–49 experiencing
+                physical and/or sexual violence from a partner.
+
+            </p>
+
+            <div class="source">
+
+                WHO — global 2023 estimate
+
+            </div>
+
+        </div>
+
+
+        <div class="place-card">
+
+            <h3>🏢 Workplace</h3>
+
+            <div class="place-number">
+                8.2%
+            </div>
+
+            <p>
+
+                Women in employment experiencing sexual violence
+                and harassment at work during their working lives.
+
+            </p>
+
+            <div class="source">
+
+                ILO — global survey
+
+            </div>
+
+        </div>
+
+
+        <div class="place-card">
+
+            <h3>🚍 Public Transport</h3>
+
+            <div class="place-number">
+                91%
+            </div>
+
+            <p>
+
+                Women and girls in a Quito baseline study who
+                experienced some form of violence on public transport.
+
+            </p>
+
+            <div class="source">
+
+                UN Women — Quito, Ecuador.
+                NOT a worldwide percentage.
+
+            </div>
+
+        </div>
+
+
+        <div class="place-card">
+
+            <h3>🌳 Public Spaces</h3>
+
+            <div class="place-number">
+                50–100%
+            </div>
+
+            <p>
+
+                Studies in different settings have reported
+                sexual harassment and other sexual violence
+                affecting 50–100% of women.
+
+            </p>
+
+            <div class="source">
+
+                UN Women — multiple settings.
+                NOT one worldwide percentage.
+
+            </div>
+
+        </div>
+
+
+        <div class="place-card">
+
+            <h3>📱 Online</h3>
+
+            <div class="place-number">
+                16–58%
+            </div>
+
+            <p>
+
+                Available studies estimate that 16–58% of women
+                have experienced technology-facilitated gender-based
+                violence.
+
+            </p>
+
+            <div class="source">
+
+                UN Women — global evidence review
+
+            </div>
+
+        </div>
+
+
+        <div class="place-card">
+
+            <h3>🏫 School / Around School</h3>
+
+            <div class="place-number">
+                50%
+            </div>
+
+            <p>
+
+                UNICEF reports that about half of the world's
+                adolescents experience peer violence in and around
+                school.
+
+            </p>
+
+            <div class="source">
+
+                UNICEF — global estimate
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- REGIONS -->
+
+<section>
+
+    <h2>🌎 Regional Differences</h2>
+
+    <p class="intro">
+
+        Crime and violence affecting women and girls are not evenly
+        distributed around the world. Different crimes also have
+        different regional patterns.
+
+    </p>
+
+
+    <div class="region">
+
+        <strong>Oceania — 37%</strong>
+
+        <p>
+
+            Lifetime prevalence of intimate-partner violence.
+
+        </p>
+
+    </div>
+
+
+    <div class="region">
+
+        <strong>Sub-Saharan Africa — 32%</strong>
+
+        <p>
+
+            Lifetime prevalence of intimate-partner violence.
+
+        </p>
+
+    </div>
+
+
+    <div class="region">
+
+        <strong>Southern Asia — 31%</strong>
+
+        <p>
+
+            Lifetime prevalence of intimate-partner violence.
+
+        </p>
+
+    </div>
+
+
+    <div class="region">
+
+        <strong>South Asia — 26%</strong>
+
+        <p>
+
+            Percentage of young women affected by child marriage
+            according to UNICEF's regional estimate.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SOURCES -->
+
+<section>
+
+    <h2>📚 Reliable Sources</h2>
+
+    <div class="sources">
+
+        <p>
+            <strong>World Health Organization (WHO)</strong>
+        </p>
+
+        <p>
+            Violence Against Women — 2026 Fact Sheet
+        </p>
+
+        <p>
+            Female Genital Mutilation — 2025 Fact Sheet
+        </p>
+
+
+        <p>
+            <strong>United Nations Office on Drugs and Crime (UNODC)</strong>
+        </p>
+
+        <p>
+            Violence Against Women Prevalence Estimates, 2023
+        </p>
+
+        <p>
+            Global Report on Trafficking in Persons 2024
+        </p>
+
+
+        <p>
+            <strong>UNICEF</strong>
+        </p>
+
+        <p>
+            Global Child Marriage Data
+        </p>
+
+
+        <p>
+            <strong>UN Women</strong>
+        </p>
+
+        <p>
+            Global information on public-space and digital violence
+            affecting women and girls
+        </p>
+
+
+        <p>
+            <strong>International Labour Organization (ILO)</strong>
+        </p>
+
+        <p>
+            Experiences of Violence and Harassment at Work:
+            A Global First Survey
+        </p>
+
+
+        <p>
+            <a href="https://www.who.int/news-room/fact-sheets/detail/violence-against-women"
+               target="_blank">
+                WHO — Violence Against Women
+            </a>
+        </p>
+
+
+        <p>
+            <a href="https://www.who.int/en/news-room/fact-sheets/detail/female-genital-mutilation"
+               target="_blank">
+                WHO — Female Genital Mutilation
+            </a>
+        </p>
+
+
+        <p>
+            <a href="https://www.unodc.org/documents/data-and-analysis/statistics/crime/Violence_against_women_prevalence_estimates_2023.pdf"
+               target="_blank">
+                UNODC — Violence Against Women Prevalence Estimates
+            </a>
+        </p>
+
+
+        <p>
+            <a href="https://data.unicef.org/topic/gender/child-marriage/"
+               target="_blank">
+                UNICEF — Child Marriage
+            </a>
+        </p>
+
+
+        <p>
+            <a href="https://www.ilo.org/publications/major-publications/experiences-violence-and-harassment-work-global-first-survey"
+               target="_blank">
+                ILO — Violence and Harassment at Work
+            </a>
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 SHE KNOWS
+    </p>
+
+    <p>
+        Knowledge creates awareness. Awareness creates change.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
